@@ -16,13 +16,13 @@ def readFile():
 		fromFile.apprend(line.replace('\n', ''))
 
 	#Q = int(''.join(x for x in dfa_description[0] if x.isdigit()))
-	for x in fromFile[0]
-		if x.isDigit()
+	for x in fromFile[0]:
+	    if x.isDigit():
 			Q = int(''.join(x))
 
 	#F = [int(x) for x in dfa_description[1].split() if x.isdigit()]
-	for x in fromFile[1]
-		if x.isDigit()
+	for x in fromFile[1]:
+		if x.isDigit():
 			F = x.split()
 
 	E = [x for x in dfa_description[2][10:]]
@@ -38,13 +38,13 @@ def readFile():
 	# Messing and converting for ease of access/traverse
 
 	#transition_table = [x for x in dfa_description[3:]]
-	for x in fromFile[3:]
+	for x in fromFile[3:]:
 		tTable.append(x)
 
-	#for i in range(len(tTable)):
-		#transition_table[i] = re.findall('\d+', transition_table[i])
+	for i in range(len(tTable)):
+		transition_table[i] = re.findall('\d+', transition_table[i])
 
-	tTable = [i in range(len(tTable)) re.findall('\d+', tTable[i]]
+	#tTable = [i in range(len(tTable)) re.findall('\d+', tTable[i]]
 
 	#Matching inputed transition to dict
 	for states in dfa:
