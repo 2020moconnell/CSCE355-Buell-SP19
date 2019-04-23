@@ -34,7 +34,7 @@ def dfaDescription():
 	#Putting in dict
 	h = 0
 	while h < Q:
-		dfa[h] = orderedDict()
+		dfa[h] = OrderedDict()
 		for x in E:
 			dfa[i][x] = ''
 			h += 1
