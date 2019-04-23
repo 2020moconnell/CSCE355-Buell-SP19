@@ -10,7 +10,7 @@ tempList1 = []
 DFAinfo = []
 TTable = []
 HOMinfo = []
-input_E = []
+#input_E = []
 Q = []
 E = []
 F = []
@@ -57,9 +57,9 @@ def findInverse():
    for line in open(sys.argv[2]):
      HOMinfo.append(line.replace('\n',''))
 
-   #input_E = [x for x in HOMinfo[0][16:]]
-   for x in HOMinfo[16:]:
-	   input_E.append(x)
+   input_E = [x for x in HOMinfo[0][16:]]
+   #for x in HOMinfo[16:]:
+#	   input_E.append(x)
 
    #Creating separate table for invhom
    homo_table = OrderedDict()
