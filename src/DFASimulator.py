@@ -11,6 +11,7 @@ tempList1 = []
 dfa = OrderedDict()
 F = []
 E = []
+TTable = []
 
 def dfaDescription():
 	global F
@@ -38,13 +39,12 @@ def dfaDescription():
 		for x in E:
 			dfa[h][x] = ''
 		h += 1
-	#for i in range(Q):
-		#dfa[i] = OrderedDict()
-		#for x in E:
-			#dfa[i][x] = ''
 
 	# Messing and converting for ease of access/traverse
-	transition_table = [x for x in DFAinfo[3:]]
+	#transition_table = [x for x in DFAinfo[3:]]
+	for x in DFAinfo[3:]:
+		TTable.append(x)
+
 	for i in range(len(transition_table)):
 		transition_table[i] = re.findall('\d+', transition_table[i])
 	#Matching inputed transition to dict
