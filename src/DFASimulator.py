@@ -2,6 +2,7 @@
 # CSCE 355 Buell
 # 4/24/19
 # 1: DFA Simulator
+#commit test comment
 
 import sys
 import re
