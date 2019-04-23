@@ -80,7 +80,7 @@ def productConstruction():
    e = 0
    f = 0
    while e < dfa1_Q:
-	   while f < dfa2_q:
+	   while f < dfa2_Q:
 		   theStates.append(str(i) +','+ str(j))
 
 
