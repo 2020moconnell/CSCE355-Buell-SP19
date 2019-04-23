@@ -15,7 +15,6 @@ input_E = []
 Q = []
 E = []
 F = []
-h_strings = []
 
 def findInverse():
    dfa = OrderedDict()
@@ -64,41 +63,24 @@ def findInverse():
 	   inout_E.append(x)
 
    #Creating separate table for invhom
-   #HTable = OrderedDict()
-   #for i in range(Q):
-   #   HTable[i] = OrderedDict()
-   #   for x in input_E:
-   #      HTable[i][x] = ''
+   HTable = OrderedDict()
+   for i in range(Q):
+      HTable[i] = OrderedDict()
+      for x in input_E:
+         HTable[i][x] = ''
 
 
-   b = 0
-   while b < Q:
-     dfa[b] = OrderedDict()
-     for x in E:
-       dfa[b][x] = ''
-     b += 1
+
    # Saving h(w).. to run through given DFA and get states to assign
-   #h_strings = [x for x in HOMinfo[2:]]
-   for x in HOMinfo[2:]:
-	   h_strings.append(x)
+   h_strings = [x for x in HOMinfo[2:]]
 
    # Traversing through h(0), h(1), .... h(n) inside the DFA to match the state to the new homo table
-   z = 0
    for idx, x in enumerate(input_E):
-	   while z < Q:
-		   S = z
-		   for y in h_strings[idx]:
-			   S = dfa[int(S)][y] # Traversing through DFA
-		   HTable[i][x] = S # Found state so setting in new homo table
-		   z += 1
-
-
-   #for idx, x in enumerate(input_E):
-   #   for i in range(Q):
-   #      S = i
-   #      for y in h_strings[idx]:
-   #         S = dfa[int(S)][y] # Traversing through DFA
-   #      HTable[i][x] = S # Found state so setting in new homo table
+      for i in range(Q):
+         S = i
+         for y in h_strings[idx]:
+            S = dfa[int(S)][y] # Traversing through DFA
+         HTable[i][x] = S # Found state so setting in new homo table
 
    print("Number of states:", Q)
    print(DFAinfo[1])
@@ -110,5 +92,7 @@ def findInverse():
       for y in HTable[x]:
          print(HTable[x][y], end= " ")
       print()
+
+
 
 findInverse()
