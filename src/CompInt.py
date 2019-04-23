@@ -76,11 +76,16 @@ def productConstruction():
    # Getting combinations/permutations for each states
    theStates = []
 
+   e = 0
+   f = 0
+   while e < dfa1_Q:
+	   while f < dfa2_q:
+		   theStates.append(str(i) +','+ str(j))
 
 
-   for i in range(dfa1_Q):
-      for j in range(dfa2_Q):
-         theStates.append(str(i) +','+ str(j)) ## EACH new state will be separated with comma, Ran into problem where we had 110 and 110 but different 1,10 and 11,0
+   #for i in range(dfa1_Q):
+   #   for j in range(dfa2_Q):
+   #      theStates.append(str(i) +','+ str(j)) ## EACH new state will be separated with comma, Ran into problem where we had 110 and 110 but different 1,10 and 11,0
    #Doing below for accepting States
    accept_States = []
    for i in dfa1_accept:
