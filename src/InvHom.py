@@ -9,7 +9,7 @@ from collections import OrderedDict
 tempList1 = []
 DFAinfo = []
 TTable = []
-HTable
+HTable = []
 HOMinfo = []
 input_E = []
 Q = []
