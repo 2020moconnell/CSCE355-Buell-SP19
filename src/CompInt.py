@@ -13,6 +13,7 @@ tempList1 = []
 tempList2 = []
 dfa1_Q = []
 dfa2_Q = []
+E = []
 
 def run_script():
    if(len(sys.argv) == 2):
@@ -82,6 +83,7 @@ def productConstruction():
          theStates.append(str(i) +','+ str(j)) ## EACH new state will be separated with comma, Ran into problem where we had 110 and 110 but different 1,10 and 11,0
    #Doing below for accepting States
    accept_States = []
+
    for i in dfa1_accept:
       for j in dfa2_accept:
          accept_States.append(i +','+ j)
@@ -90,7 +92,9 @@ def productConstruction():
       iOfAccept.append(theStates.index(i))
 
    Alphabet = dfa1[2] #Using this for Alphabet
-   E = [x for x in dfa1[2][10:]]
+   #E = [x for x in dfa1[2][10:]]
+   for x in dfa1[2][10:]:
+	   E.append(x)
    ## DFA 1
    dfa_table = OrderedDict()
 
