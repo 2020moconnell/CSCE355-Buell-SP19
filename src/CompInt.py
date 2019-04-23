@@ -13,6 +13,7 @@ tempList1 = []
 tempList2 = []
 dfa1_Q = []
 dfa2_Q = []
+E = []
 
 def run_script():
    if(len(sys.argv) == 2):
@@ -75,9 +76,17 @@ def productConstruction():
    total_States = dfa1_Q * dfa2_Q # Using as Output for total of States
    # Getting combinations/permutations for each states
    theStates = []
-   for i in range(dfa1_Q):
-      for j in range(dfa2_Q):
-         theStates.append(str(i) +','+ str(j)) ## EACH new state will be separated with comma, Ran into problem where we had 110 and 110 but different 1,10 and 11,0
+
+   e = 0
+   f = 0
+   while e < dfa1_Q:
+	   while f < dfa2_q:
+		   theStates.append(str(i) +','+ str(j))
+
+
+   #for i in range(dfa1_Q):
+   #   for j in range(dfa2_Q):
+   #      theStates.append(str(i) +','+ str(j)) ## EACH new state will be separated with comma, Ran into problem where we had 110 and 110 but different 1,10 and 11,0
    #Doing below for accepting States
    accept_States = []
    for i in dfa1_accept:
@@ -88,14 +97,25 @@ def productConstruction():
       iOfAccept.append(theStates.index(i))
 
    Alphabet = dfa1[2] #Using this for Alphabet
-   E = [x for x in dfa1[2][10:]]
+   #E = [x for x in dfa1[2][10:]]
+   for x in dfa1[2][10:]:
+	   E.append(x)
    ## DFA 1
    dfa_table = OrderedDict()
 
-   for i in range(dfa1_Q):
-      dfa_table[i] = OrderedDict()
-      for x in E:
-         dfa_table[i][x] = ''
+   g = 0
+   while g < dfa1_Q:
+	   dfa_table[g] = OrderedDict()
+	   for x in E:
+		   dfa_table[g][x] = ''
+
+   #for i in range(dfa1_Q):
+   #   dfa_table[i] = OrderedDict()
+   #   for x in E:
+   #      dfa_table[i][x] = ''
+
+
+
    # Messing and converting for ease of access/traverse
    transition_table = [x for x in dfa1[3:]]
    for i in range(len(transition_table)):
