@@ -53,10 +53,11 @@ def findInverse():
             dfa[states][x] = TTable[states][idx]
 
    #HOMinfo = [line.rstrip('\n') for line in open(sys.argv[2])]
-   for line in open(sys.argv[1]):
-     DFAinfo.append(line.replace('\n',''))
+   for line in open(sys.argv[2]):
+     HOMinfo.append(line.replace('\n',''))
 
-   input_E = [x for x in HOMinfo[0][16:]]
+   #input_E = [x for x in HOMinfo[0][16:]]
+
    #Creating separate table for invhom
    homo_table = OrderedDict()
    for i in range(Q):
