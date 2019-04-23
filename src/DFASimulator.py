@@ -2,7 +2,6 @@
 # CSCE 355 Buell
 # 4/24/19
 # 1: DFA Simulator
-#commit test comment
 
 import sys
 import re
@@ -18,9 +17,8 @@ def readFile():
 
 	#Q = int(''.join(x for x in dfa_description[0] if x.isdigit()))
 	for x in fromFile[0]:
-	    if x.isDigit():
-			Q = int(''.join(x))
-
+    if x.isDigit():
+    Q = int(''.join(x))
 	#F = [int(x) for x in dfa_description[1].split() if x.isdigit()]
 	for x in fromFile[1]:
 		if x.isDigit():
