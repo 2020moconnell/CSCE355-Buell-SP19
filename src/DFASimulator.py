@@ -6,24 +6,25 @@
 import sys
 import re
 from collections import OrderedDict
-dfa_description = []
+DFAinfo = []
 dfa = OrderedDict()
 F = []
 
 def dfaDescription():
 	global F
-	dfa_description = [line.rstrip('\n') for line in open(sys.argv[1])]
+	DFAinfo = [line.replace('\n','') for line in open(sys.argv[1])]
+
 	# Getting # of States, Putting Accepting States and Alphabet into it's own LIST.
-	Q = int(''.join(x for x in dfa_description[0] if x.isdigit()))
-	F = [int(x) for x in dfa_description[1].split() if x.isdigit()]
-	E = [x for x in dfa_description[2][10:]]
+	Q = int(''.join(x for x in DFAinfo[0] if x.isdigit()))
+	F = [int(x) for x in DFAinfo[1].split() if x.isdigit()]
+	E = [x for x in DFAinfo[2][10:]]
 	#Putting in dict
 	for i in range(Q):
 		dfa[i] = OrderedDict()
 		for x in E:
 			dfa[i][x] = ''
 	# Messing and converting for ease of access/traverse
-	transition_table = [x for x in dfa_description[3:]]
+	transition_table = [x for x in DFAinfo[3:]]
 	for i in range(len(transition_table)):
 		transition_table[i] = re.findall('\d+', transition_table[i])
 	#Matching inputed transition to dict
