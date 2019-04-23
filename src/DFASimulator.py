@@ -7,7 +7,7 @@ import sys
 import re
 from collections import OrderedDict
 DFAinfo = []
-tempList = []
+tempList1 = []
 dfa = OrderedDict()
 F = []
 
@@ -17,12 +17,15 @@ def dfaDescription():
 	   DFAinfo.append(line.replace('\n',''))
 
 	# Getting # of States, Putting Accepting States and Alphabet into it's own LIST.
-	#Q = int(''.join(x for x in DFAinfo[0] if x.isdigit()))
 	for x in DFAinfo[0]:
 	   if x.isdigit():
 		   tempList.append(x)
-	Q = int(''.join(tempList))
-	F = [int(x) for x in DFAinfo[1].split() if x.isdigit()]
+	Q = int(''.join(tempList1))
+
+	#F = [int(x) for x in DFAinfo[1].split() if x.isdigit()]
+	for x in DFAinfo[1].split():
+		if x.isdigit():
+			F.append(int(x))
 	E = [x for x in DFAinfo[2][10:]]
 	#Putting in dict
 	for i in range(Q):
