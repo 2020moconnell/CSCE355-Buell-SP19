@@ -10,6 +10,7 @@ DFAinfo = []
 tempList1 = []
 dfa = OrderedDict()
 F = []
+E = []
 
 def dfaDescription():
 	global F
