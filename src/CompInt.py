@@ -16,7 +16,7 @@ def run_script():
 # Complement DFA switches accepting and nonaccepting states
 def comp():
     for line in open(sys.argv[1]):
-		fromFile.append(line.replace('\n', ''))
+      fromFile.append(line.replace('\n', ''))
     states = re.findall('\d+',fromFile[0])
     counter = int(states[0])
     accepting_states = re.findall('\d+',fromFile[1])
@@ -34,18 +34,18 @@ def inter():
     #
     #dfa1 = [line.rstrip('\n') for line in open(sys.argv[1])]
     for line in open(sys.argv[1]):
-		dfa1.append(line.replace('\n', ''))
+      dfa1.append(line.replace('\n', ''))
     #dfa2 = [line.rstrip('\n') for line in open(sys.argv[2])]
     for line in open(sys.argv[2]):
-		fromFile.append(line.replace('\n', ''))
+      fromFile.append(line.replace('\n', ''))
     #dfa1_Q = int(''.join(x for x in dfa1[0] if x.isdigit()))
     for x in dfa1[0]:
-	    if x.isDigit():
-			dfa1_Q = int(''.join(x))
+       if x.isDigit():
+         dfa1_Q = int(''.join(x))
     #dfa2_Q = int(''.join(x for x in dfa2[0] if x.isdigit()))
     for x in fromFile[0]:
-	    if x.isDigit():
-			dfa2_Q = int(''.join(x))
+       if x.isDigit():
+         dfa2_Q = int(''.join(x))
     dfa1_accept = re.findall('\d+',dfa1[1])
     dfa2_accept = re.findall('\d+',dfa2[1])
 
