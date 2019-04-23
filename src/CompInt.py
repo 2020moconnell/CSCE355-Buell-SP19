@@ -7,7 +7,8 @@ import sys
 import re
 from collections import OrderedDict
 DFAinfo = []
-
+dfa1 = []
+dfa2 = []
 
 def run_script():
    if(len(sys.argv) == 2):
@@ -46,8 +47,12 @@ def getComplement():
 ## We will assume that it follows the format 0 = 00, 1 = 01 as in the first state of DFA A x(Cross Product) of DFA B will give us State 0. And it will continue...
 def productConstruction():
    # Reading in files
-   dfa1 = [line.rstrip('\n') for line in open(sys.argv[1])]
-   dfa2 = [line.rstrip('\n') for line in open(sys.argv[2])]
+   #dfa1 = [line.rstrip('\n') for line in open(sys.argv[1])]
+   for line in open(sys.argv[1]):
+      dfa1.append(line.replace('\n',''))
+   #dfa2 = [line.rstrip('\n') for line in open(sys.argv[2])]
+   for line in open(sys.argv[2]):
+      dfa2.append(line.replace('\n',''))
    dfa1_Q = int(''.join(x for x in dfa1[0] if x.isdigit()))
    dfa2_Q = int(''.join(x for x in dfa2[0] if x.isdigit()))
    dfa1_accept = re.findall('\d+',dfa1[1])
