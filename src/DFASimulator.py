@@ -12,7 +12,9 @@ F = []
 
 def dfaDescription():
 	global F
-	DFAinfo = [line.replace('\n','') for line in open(sys.argv[1])]
+	#DFAinfo = [line.replace('\n','') for line in open(sys.argv[1])]
+	for line in open(sys.argv[1]):
+	   DFAinfo = line.replace('\n','')
 
 	# Getting # of States, Putting Accepting States and Alphabet into it's own LIST.
 	Q = int(''.join(x for x in DFAinfo[0] if x.isdigit()))
