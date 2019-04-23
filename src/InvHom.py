@@ -8,6 +8,7 @@ import re
 from collections import OrderedDict
 tempList1 = []
 DFAinfo = []
+TTable = []
 Q = []
 E = []
 F = []
@@ -39,7 +40,9 @@ def findInverse():
      h += 1
 
    # Messing and converting for ease of access/traverse
-   transition_table = [x for x in DFAinfo[3:]]
+   #TTable = [x for x in DFAinfo[3:]]
+   for x in DFAinfo[3:]:
+	   TTable.append(x)
    for i in range(len(transition_table)):
       transition_table[i] = re.findall('\d+', transition_table[i])
    #Matching inputed transition to dict
