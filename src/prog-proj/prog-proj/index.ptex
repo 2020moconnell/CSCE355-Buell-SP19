@@ -1,0 +1,215 @@
+\html{
+\head{
+\title{CSCE 355 Programming Project Homepage}
+}
+
+\body{
+
+\h1{CSCE 355 Programming Project\
+Fall 2014\
+Due November 11, 2014}
+
+\p{
+
+\h2{Handout}
+
+This is the homepage for the programming project for CSCE 355.
+Everything involving the project can be linked to from here.
+
+Here is the \a[HREF="programming-assignment.pdf"]{Programming Project
+  Handout} (updated 9/16/14).  You should read this first.
+
+\h2{Self-testing software files}
+
+Here is software for you to test your own programs.  I will use
+the same software in the grading process, and so I urge you to use it
+as well so that you will not have any unpleasant surprises.
+
+There are two .zip files: one unzips to a directory containing various
+executables; the other unzips to a directory tree with test files,
+both input and output.
+
+\h3{Installing the files}
+
+I am assuming that you will use this software either on a GNU/Linux system
+(such as those available in our Linux labs) or on an Apple Mac running
+some recent version of OS X (with Perl\ 5 installed, which is probably
+is).  I can't
+guarantee that anything will work properly on any other system;
+indeed, there are some precompiled binaries that presumably will only
+run on one of the two systems, above.
+
+Download these two .zip files to your system:
+\ol{
+\li either \a[HREF="bin-linux.zip"]{\tt{bin-linux.zip}} or
+\a[HREF="bin-mac-osx.zip"]{\tt{bin-mac-osx.zip}}, depending on your
+  system, and
+\li \a[HREF="test-suite.zip"]{\tt{test-suite.zip}} (system-independent)
+}
+to your system.  The first file unzips to a directory named \tt{bin}
+containing a handful of executable files.  The second unzips to a
+directory tree named \tt{test-suite} containing both input files to
+feed to your programs and output files to compare with your programs'
+output.  You should be able place these subdirectories virtually
+anywhere, except DON'T unzip the files where you already have a
+subdirectory named \tt{bin} or \tt{test-suite} if you're at all
+worried about files being overwritten.
+
+On the command line, move each zip file to the place where you want the
+corresponding subdirectory to be and type
+\verbatim
+  unzip <zip-file.zip>
+EOV
+for each zip file.
+
+Then, you will need to hand-edit two lines in the file
+\tt{project-test.pl} in the \tt{bin} directory.  On line\ 19, change
+the path being assigned to the variable \tt{\$test\_suite\_root} to be
+the pathname of your current \tt{test-suite} directory (depending on
+where you put it in the previous step).  Similarly, on line\ 22,
+change the pathname being assigned to the variable \tt{\$bin\_dir} to
+be the pathname of your current \tt{bin} directory.  Note that
+\tt{\$ENV\{HOME\}} refers to your home directory.  (The current
+settings of these variables refer to \em{my} system.)  Save your
+changes and exit the editor.
+
+That's it.  You may find it convenient to add the \tt{bin} directory to
+your \tt{\$PATH} variable, but that's optional.  The next section is
+worded assuming you have done this.
+
+\h3{Using the files to test your code}
+
+You should read this entire subsection before using any of the testing
+software.
+
+The \tt{bin} directory contains the file \tt{project-test.pl} (which
+you edited).  This is the file you will use most often, and it
+may be the only file you ever use.  As with the other \tt{.pl} files in
+the directory, it is a Perl script that controls the execution of
+several other processes, including building and running your programs
+and testing their output against the solutions.  When you run
+\tt{project-test.pl}, you pass it the directory containing your source
+code.  The program then moves into this directory and does the
+following for each of the six possible tasks:
+\ul{
+\li looks for the .txt file you provide with instructions on building
+and running your program for this task, if any (otherwise skips to
+the next task);
+\li attempts to build your program using the build command(s) you
+provide;
+\li runs your program a number of times on various
+input files found under the \tt{test-suite} directory, comparing your
+output with the solutions (also under the \tt{test-suite} directory).
+}
+
+To invoke the script, type
+\verbatim
+   project-test.pl <my-source-code-directory>
+EOV
+at the shell prompt.
+
+During its execution, the script puts comments into a file
+\tt{comments.txt} in your source code directory.  After the script
+finishes, you should examine this file.  It contains routine messages
+explaining what the script was doing and when, as well as any problems it
+encountered.  Error messages are given in ALL CAPITAL LETTERS so that
+they are easy to spot.  The end of the file contains a summary of what
+the script found for each task.
+
+You may run the script \tt{project-test.pl} any number of times.  On
+each run, the \tt{comments.txt} file is overwritten, but a back-up file
+\tt{comments.bak} is created beforehand.
+
+IMPORTANT: please be aware that, besides the comments file,
+the script modifies your source code directory in other ways.
+Here is a summary of the script's modifications:
+\ul{
+\li It creates any intermediate files used in compilation (such as
+\tt{.o} files), depending on your build instructions.  (It does not
+remove these unless your instructions include commands to remove
+them.)
+\li It creates (and does not delete) any executable binaries resulting
+from compiling your programs.
+\li It creates the \tt{comments.txt} and/or \tt{comments.bak} files
+described above.
+\li It creates a file \tt{errlog.txt} containing what you see on the
+screen as the script executes.
+\li It creates a temporary subdirectory \tt{test-outputs} to hold the
+outputs of your programs.  (This subdirectory is removed upon normal
+completion of the script.)
+}
+
+\h3{Other things you can do}
+
+The \tt{bin} directory contains other files you can use to test and
+debug your programs.  There are three binary executables that are
+called from the \tt{project-test.pl} script but that you can also run
+as stand-alone programs:
+\ul{
+\li \tt{isDFA} reads text from standard input and reports whether or
+not the input constitutes a correctly formatted DFA.  If so, it gives
+the number of states and the alphabet.  For example:
+\verbatim
+  $ isDFA < some_random_garbage_file.txt
+  Not a DFA
+  $ ./searcher str8.txt | isDFA
+  A DFA with 4096 states and alphabet abcdefghijklmnopqrstuvwxyz
+EOV
+\li \tt{DFAiso} takes a DFA file as a command line argument (we'll
+call it the \em{reference DFA}) and compares it with another DFA read
+from standard input (the \em{input DFA}).  It reports whether or not the two DFAs are
+isomorphic, that is, whether or not they are the same DFA up to
+reordering of states.  The reference DFA must be sane, that is, all
+states must be reachable from the start state.  If you use the command
+line switch \tt{--loose} (with two hyphens), the program will only
+test isomorphism of the reference DFA with the reachable portion of
+the input DFA.  This only matters if the input DFA is not sane.
+(There is also a \tt{--strict} option, but that's the default.)  For
+example,
+\verbatim
+  $ ./minimizer nonminimalDFA2.txt | DFAiso minDFA2.txt
+  The two DFAs are isomorphic.
+   0 1
+   0 1
+  $ DFAiso minDFA3.txt < minDFA5.txt
+  Accepting state discrepancy found: transition `0' from states (0,0)
+  The two DFAs are different.
+  $ DFAiso minDFA1.txt < nonminimalDFA7.txt
+  Sizes differ.  Ref DFA: 5 states; input DFA: 8 states
+  The two DFAs are different.
+  $ DFAiso --loose minDFA1.txt < nonminimalDFA7.txt
+  The two DFAs are isomorphic.
+   0 1 2 3 4
+   0 2 4 6 7
+EOV
+If the DFAs are isomorphic, a matching of states between the two DFAs
+is also displayed.
+\li \tt{DFAequiv} takes two DFA text files as arguments and reports
+whether or not the DFAs are equivalent, that is, whether or not they
+recognize the same language.  For example,
+\verbatim
+  $ DFAequiv nonminimalDFA4.txt minDFA4.txt
+  The two DFAs are equivalent.
+  $ DFAequiv nonminimalDFA4.txt minDFA5.txt
+  The two DFAs are not equivalent.
+EOV
+}
+
+The other files in the \tt{bin} directory are Perl scripts used to
+generate and process test input files.  Comments near the top of these
+files explain what they do and how to use them.  All their output is
+to standard output.
+
+You can copy and edit any of these files, including
+\tt{project-test.pl}.  For example, you can suppress the deletion of
+the \tt{test-outputs} subdirectory and its files by setting the
+\tt{\$delete\_temps} flag to 0 on line\ 75, and you can adjust the
+execution time-out limit on line\ 64.
+}
+
+\hr
+
+This page was last updated \today at \now.
+
+}
+}
