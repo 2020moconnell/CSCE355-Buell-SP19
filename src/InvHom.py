@@ -14,6 +14,7 @@ input_E = []
 Q = []
 E = []
 F = []
+h_strings = []
 
 def findInverse():
    dfa = OrderedDict()
@@ -68,7 +69,9 @@ def findInverse():
       for x in input_E:
          homo_table[i][x] = ''
    # Saving h(w).. to run through given DFA and get states to assign
-   h_strings = [x for x in HOMinfo[2:]]
+   #h_strings = [x for x in HOMinfo[2:]]
+   for x in HOMinfo[2:]:
+	   h_strings.append(x)
 
    # Traversing through h(0), h(1), .... h(n) inside the DFA to match the state to the new homo table
    for idx, x in enumerate(input_E):
