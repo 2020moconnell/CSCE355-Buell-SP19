@@ -7,6 +7,7 @@ import sys
 import re
 from collections import OrderedDict
 tempList1 = []
+DFAinfo = []
 Q = []
 E = []
 F = []
