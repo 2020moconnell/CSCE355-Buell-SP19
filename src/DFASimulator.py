@@ -19,7 +19,7 @@ def dfaDescription():
 	# Getting # of States, Putting Accepting States and Alphabet into it's own LIST.
 	for x in DFAinfo[0]:
 	   if x.isdigit():
-		   tempList.append(x)
+		   tempList1.append(x)
 	Q = int(''.join(tempList1))
 
 	#F = [int(x) for x in DFAinfo[1].split() if x.isdigit()]
