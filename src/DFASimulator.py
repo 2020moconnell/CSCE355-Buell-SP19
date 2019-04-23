@@ -22,16 +22,26 @@ def dfaDescription():
 		   tempList1.append(x)
 	Q = int(''.join(tempList1))
 
-	#F = [int(x) for x in DFAinfo[1].split() if x.isdigit()]
 	for x in DFAinfo[1].split():
 		if x.isdigit():
 			F.append(int(x))
-	E = [x for x in DFAinfo[2][10:]]
+
+	#E = [x for x in DFAinfo[2][10:]]
+	for x in DFAinfo[2][10:]:
+		E.append(x)
+
 	#Putting in dict
-	for i in range(Q):
-		dfa[i] = OrderedDict()
+	h = 0
+	while h < Q:
+		dfa[h] = orderedDict()
 		for x in E:
 			dfa[i][x] = ''
+			h += 1
+	#for i in range(Q):
+		#dfa[i] = OrderedDict()
+		#for x in E:
+			#dfa[i][x] = ''
+
 	# Messing and converting for ease of access/traverse
 	transition_table = [x for x in DFAinfo[3:]]
 	for i in range(len(transition_table)):
