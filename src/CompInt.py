@@ -26,13 +26,15 @@ def getComplement():
    
    a = 0
    b = len(DFAinfo)
+   d = 0
    c = counter
    while a < b:
 	   if(a == 1):
 		   print(DFAinfo[a][0:18], end = '')
-		   while a < c:
-			   if(not str(a) in accepting_states):
-				   print(a, "", end = '')
+		   while d < c:
+			   if(not str(d) in accepting_states):
+				   print(d, "", end = '')
+			   d += 1
 		   print()
 		   a += 1
 	   else:
