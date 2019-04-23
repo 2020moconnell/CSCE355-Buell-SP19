@@ -35,7 +35,7 @@ def getComplement():
 				   print(a, "", end = '')
 		   print()
 	   else:
-			print(DFAinfo[a])
+		   print(DFAinfo[a])
 
    #for i in range(len(DFAinfo)):
    #   if(i == 1):
