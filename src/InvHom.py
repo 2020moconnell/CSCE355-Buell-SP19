@@ -43,13 +43,13 @@ def findInverse():
    #TTable = [x for x in DFAinfo[3:]]
    for x in DFAinfo[3:]:
 	   TTable.append(x)
-   for i in range(len(transition_table)):
-      transition_table[i] = re.findall('\d+', transition_table[i])
+   for i in range(len(TTable)):
+      TTable[i] = re.findall('\d+', TTable[i])
    #Matching inputed transition to dict
    for states in dfa:
       for idx, x in enumerate(dfa[states]):
          for y in range(len(E)):
-            dfa[states][x] = transition_table[states][idx]
+            dfa[states][x] = TTable[states][idx]
 
    homo_description = [line.rstrip('\n') for line in open(sys.argv[2])]
    input_E = [x for x in homo_description[0][16:]]
