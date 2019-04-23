@@ -23,15 +23,29 @@ def getComplement():
    states = re.findall('\d+',DFAinfo[0])
    counter = int(states[0])
    accepting_states = re.findall('\d+',DFAinfo[1])
-   for i in range(len(DFAinfo)):
-      if(i == 1):
-         print(DFAinfo[i][0:18],end = '')
-         for i in range(counter):
-            if(not str(i) in accepting_states):
-               print(i, "", end ='')
-         print()
-      else:
-         print(DFAinfo[i])
+   
+   a = 0
+   b = len(DFAinfo)
+   c = counter
+   while a < b:
+	   if(a == 1):
+		   print(DFAinfo[a][0:18], end = '')
+		   while a < c:
+			   if(not str(a) in accepting_states):
+				   print(a, "", end = '')
+		   print()
+	   else:
+			print(DFAinfo[a])
+
+   #for i in range(len(DFAinfo)):
+   #   if(i == 1):
+   #      print(DFAinfo[i][0:18],end = '')
+   #      for i in range(counter):
+   #         if(not str(i) in accepting_states):
+   #            print(i, "", end ='')
+   #      print()
+   #   else:
+   #      print(DFAinfo[i])
 
 ## This is finding the intersection between the two
 ## We will assume that it follows the format 0 = 00, 1 = 01 as in the first state of DFA A x(Cross Product) of DFA B will give us State 0. And it will continue...
