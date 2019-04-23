@@ -8,9 +8,14 @@ import re
 from collections import OrderedDict
 tempList1 = []
 DFAinfo = []
+TTable = []
+HTable
+HOMinfo = []
+input_E = []
 Q = []
 E = []
 F = []
+h_strings = []
 
 def findInverse():
    dfa = OrderedDict()
@@ -37,46 +42,63 @@ def findInverse():
      for x in E:
        dfa[h][x] = ''
      h += 1
-	 	 
-
-
-   #Q = int(''.join(x for x in DFAinfo[0] if x.isdigit()))
-   #F = [int(x) for x in DFAinfo[1].split() if x.isdigit()]
-   #E = [x for x in DFAinfo[2][10:]] # Output
-   #Putting in dict
-   #for i in range(Q):
-   #   dfa[i] = OrderedDict()
-   #   for x in E:
-   #      dfa[i][x] = '' 
 
    # Messing and converting for ease of access/traverse
-   transition_table = [x for x in DFAinfo[3:]]
-   for i in range(len(transition_table)):
-      transition_table[i] = re.findall('\d+', transition_table[i])
+   #TTable = [x for x in DFAinfo[3:]]
+   for x in DFAinfo[3:]:
+	   TTable.append(x)
+   for i in range(len(TTable)):
+      TTable[i] = re.findall('\d+', TTable[i])
    #Matching inputed transition to dict
    for states in dfa:
       for idx, x in enumerate(dfa[states]):
          for y in range(len(E)):
-            dfa[states][x] = transition_table[states][idx]
+            dfa[states][x] = TTable[states][idx]
 
-   homo_description = [line.rstrip('\n') for line in open(sys.argv[2])]
-   input_E = [x for x in homo_description[0][16:]]
+   #HOMinfo = [line.rstrip('\n') for line in open(sys.argv[2])]
+   for line in open(sys.argv[2]):
+     HOMinfo.append(line.replace('\n',''))
+
+   #input_E = [x for x in HOMinfo[0][16:]]
+   for x in HOMinfo[16:]:
+	   inout_E.append(x)
+
    #Creating separate table for invhom
-   homo_table = OrderedDict()
-   for i in range(Q):
-      homo_table[i] = OrderedDict()
-      for x in input_E:
-         homo_table[i][x] = ''
+   #HTable = OrderedDict()
+   #for i in range(Q):
+   #   HTable[i] = OrderedDict()
+   #   for x in input_E:
+   #      HTable[i][x] = ''
+
+
+   b = 0
+   while b < Q:
+     dfa[b] = OrderedDict()
+     for x in E:
+       dfa[b][x] = ''
+     b += 1
    # Saving h(w).. to run through given DFA and get states to assign
-   h_strings = [x for x in homo_description[2:]]
+   #h_strings = [x for x in HOMinfo[2:]]
+   for x in HOMinfo[2:]:
+	   h_strings.append(x)
 
    # Traversing through h(0), h(1), .... h(n) inside the DFA to match the state to the new homo table
+   z = 0
    for idx, x in enumerate(input_E):
-      for i in range(Q):
-         S = i
-         for y in h_strings[idx]:
-            S = dfa[int(S)][y] # Traversing through DFA
-         homo_table[i][x] = S # Found state so setting in new homo table
+	   while z < Q:
+		   S = z
+		   for y in h_strings[idx]:
+			   S = dfa[int(S)][y] # Traversing through DFA
+		   HTable[i][x] = S # Found state so setting in new homo table
+		   z += 1
+
+
+   #for idx, x in enumerate(input_E):
+   #   for i in range(Q):
+   #      S = i
+   #      for y in h_strings[idx]:
+   #         S = dfa[int(S)][y] # Traversing through DFA
+   #      HTable[i][x] = S # Found state so setting in new homo table
 
    print("Number of states:", Q)
    print(DFAinfo[1])
@@ -84,11 +106,9 @@ def findInverse():
    for x in input_E:
       print(x,end="")
    print()
-   for x in homo_table:
-      for y in homo_table[x]:
-         print(homo_table[x][y], end= " ")
+   for x in HTable:
+      for y in HTable[x]:
+         print(HTable[x][y], end= " ")
       print()
-
-
 
 findInverse()
