@@ -14,6 +14,8 @@ tempList2 = []
 dfa1_Q = []
 dfa2_Q = []
 E = []
+TTable = []
+TTable2 = []
 
 def run_script():
    if(len(sys.argv) == 2):
@@ -103,13 +105,20 @@ def productConstruction():
       for x in E:
          dfa_table[i][x] = ''
    # Messing and converting for ease of access/traverse
-   transition_table = [x for x in dfa1[3:]]
-   for i in range(len(transition_table)):
-      transition_table[i] = re.findall('\d+', transition_table[i])
+   #TTable = [x for x in dfa1[3:]]
+   for x in dfa1[3:]:
+	   TTable.append(x)
+
+   #for i in range(len(TTable)):
+   #   TTable[i] = re.findall('\d+', TTable[i])
+   k = 0
+   while k < len(TTable2):
+		TTable2[k] = re.findall('\d+', TTable2[k])
+
    for states in dfa_table:
       for idx, x in enumerate(dfa_table[states]):
          for y in range(len(E)):
-            dfa_table[states][x] = transition_table[states][idx]
+            dfa_table[states][x] = TTable[states][idx]
 
    # DFA 2
    dfa2_table = OrderedDict()
@@ -117,14 +126,22 @@ def productConstruction():
       dfa2_table[i] = OrderedDict()
       for x in E:
          dfa2_table[i][x] = ''
-   transition_table2 = [x for x in dfa2[3:]]
-   for i in range(len(transition_table2)):
-      transition_table2[i] = re.findall('\d+', transition_table2[i])
+   #TTable2 = [x for x in dfa2[3:]]
+   for x in dfa2[3:]:
+	   TTable2.append(x)
+
+   h = 0
+   while h < len(TTable2):
+	   TTable2[h] = re.findall('\d+', TTable2[h])
+
+
+   #for i in range(len(TTable2)):
+   #   TTable2[i] = re.findall('\d+', TTable2[i])
 
    for states in dfa2_table:
       for idx, x in enumerate(dfa2_table[states]):
          for y in range(len(E)):
-            dfa2_table[states][x] = transition_table2[states][idx]
+            dfa2_table[states][x] = TTable2[states][idx]
 
    #Creating Complement Table for construction
    complement_table = OrderedDict()
