@@ -112,8 +112,8 @@ def productConstruction():
    #for i in range(len(TTable)):
    #   TTable[i] = re.findall('\d+', TTable[i])
    k = 0
-   while k < len(TTable2):
-	   TTable2[k] = re.findall('\d+', TTable2[k])
+   while k < len(TTable):
+	   TTable[k] = re.findall('\d+', TTable[k])
 
    for states in dfa_table:
       for idx, x in enumerate(dfa_table[states]):
