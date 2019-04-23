@@ -9,6 +9,7 @@ from collections import OrderedDict
 tempList1 = []
 DFAinfo = []
 TTable = []
+HOMinfo = []
 Q = []
 E = []
 F = []
@@ -51,8 +52,11 @@ def findInverse():
          for y in range(len(E)):
             dfa[states][x] = TTable[states][idx]
 
-   homo_description = [line.rstrip('\n') for line in open(sys.argv[2])]
-   input_E = [x for x in homo_description[0][16:]]
+   #HOMinfo = [line.rstrip('\n') for line in open(sys.argv[2])]
+   for line in open(sys.argv[1]):
+     DFAinfo.append(line.replace('\n',''))
+
+   input_E = [x for x in HOMinfo[0][16:]]
    #Creating separate table for invhom
    homo_table = OrderedDict()
    for i in range(Q):
@@ -60,7 +64,7 @@ def findInverse():
       for x in input_E:
          homo_table[i][x] = ''
    # Saving h(w).. to run through given DFA and get states to assign
-   h_strings = [x for x in homo_description[2:]]
+   h_strings = [x for x in HOMinfo[2:]]
 
    # Traversing through h(0), h(1), .... h(n) inside the DFA to match the state to the new homo table
    for idx, x in enumerate(input_E):
