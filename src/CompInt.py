@@ -7,6 +7,12 @@ import sys
 import re
 from collections import OrderedDict
 DFAinfo = []
+dfa1 = []
+dfa2 = []
+tempList1 = []
+tempList2 = []
+dfa1_Q = []
+dfa2_Q = []
 
 def run_script():
    if(len(sys.argv) == 2):
@@ -17,7 +23,6 @@ def run_script():
 ## To Get Complement of DFA, you just swap accepting states with NON Accepting States
 ## So now non-accepting states are now accepting and accepting states are non-accepting
 def getComplement():
-   #DFAinfo = [line.rstrip('\n') for line in open(sys.argv[1])]
    for line in open(sys.argv[1]):
       DFAinfo.append(line.replace('\n',''))
    states = re.findall('\d+',DFAinfo[0])
@@ -41,24 +46,28 @@ def getComplement():
 		   print(DFAinfo[a])
 		   a += 1
 
-   #for i in range(len(DFAinfo)):
-   #   if(i == 1):
-   #      print(DFAinfo[i][0:18],end = '')
-   #      for i in range(counter):
-   #         if(not str(i) in accepting_states):
-   #            print(i, "", end ='')
-   #      print()
-   #   else:
-   #      print(DFAinfo[i])
 
 ## This is finding the intersection between the two
 ## We will assume that it follows the format 0 = 00, 1 = 01 as in the first state of DFA A x(Cross Product) of DFA B will give us State 0. And it will continue...
 def productConstruction():
    # Reading in files
-   dfa1 = [line.rstrip('\n') for line in open(sys.argv[1])]
-   dfa2 = [line.rstrip('\n') for line in open(sys.argv[2])]
-   dfa1_Q = int(''.join(x for x in dfa1[0] if x.isdigit()))
-   dfa2_Q = int(''.join(x for x in dfa2[0] if x.isdigit()))
+   #dfa1 = [line.rstrip('\n') for line in open(sys.argv[1])]
+   for line in open(sys.argv[1]):
+      dfa1.append(line.replace('\n',''))
+   #dfa2 = [line.rstrip('\n') for line in open(sys.argv[2])]
+   for line in open(sys.argv[2]):
+      dfa2.append(line.replace('\n',''))
+   #dfa1_Q = int(''.join(x for x in dfa1[0] if x.isdigit()))
+   for x in dfa1[0]:
+     if x.isdigit():
+       tempList1.append(x)
+   dfa1_Q = int(''.join(tempList1))
+   #dfa2_Q = int(''.join(x for x in dfa2[0] if x.isdigit()))
+   for x in dfa2[0]:
+     if x.isdigit():
+       tempList2.append(x)
+   dfa2_Q = int(''.join(tempList1))
+
    dfa1_accept = re.findall('\d+',dfa1[1])
    dfa2_accept = re.findall('\d+',dfa2[1])
 
