@@ -59,7 +59,7 @@ def findInverse():
 
    #input_E = [x for x in HOMinfo[0][16:]]
    for x in HOMinfo[16:]:
-	   inout_E.append(x)
+	   input_E.append(x)
 
    #Creating separate table for invhom
    homo_table = OrderedDict()
