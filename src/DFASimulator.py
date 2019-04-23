@@ -36,7 +36,7 @@ def dfaDescription():
 	while h < Q:
 		dfa[h] = OrderedDict()
 		for x in E:
-			dfa[i][x] = ''
+			dfa[h][x] = ''
 			h += 1
 	#for i in range(Q):
 		#dfa[i] = OrderedDict()
