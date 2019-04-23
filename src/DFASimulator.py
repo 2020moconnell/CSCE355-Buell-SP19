@@ -12,12 +12,15 @@ F = []
 
 def dfaDescription():
 	global F
-	#DFAinfo = [line.replace('\n','') for line in open(sys.argv[1])]
-	for line in open(sys.argv[1]):
-	   DFAinfo = line.replace('\n','')
+	DFAinfo = [line.replace('\n','') for line in open(sys.argv[1])]
+	#for line in open(sys.argv[1]):
+	   #DFAinfo = line.replace('\n','')
 
 	# Getting # of States, Putting Accepting States and Alphabet into it's own LIST.
-	Q = int(''.join(x for x in DFAinfo[0] if x.isdigit()))
+	#Q = int(''.join(x for x in DFAinfo[0] if x.isdigit()))
+	for x in x in DFAinfo[0]:
+		if x.isDigit():
+			Q= int(''.join(x))
 	F = [int(x) for x in DFAinfo[1].split() if x.isdigit()]
 	E = [x for x in DFAinfo[2][10:]]
 	#Putting in dict
