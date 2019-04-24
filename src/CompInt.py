@@ -47,20 +47,18 @@ def productConstruction():
       dfa1.append(line.replace('\n',''))
    for line in open(sys.argv[2]):
       dfa2.append(line.replace('\n',''))
+   
    for x in dfa1[0]:
      if x.isdigit():
        tempList1.append(x)
    dfa1_Q = int(''.join(tempList1))
-   for x in dfa2[0]:
-     if x.isdigit():
-       tempList2.append(x)
-   tempInt = ''.join(tempList2)
-   dfa2_Q = int(tempInt)
+   
+   dfa2_Q = int(''.join(x for x in dfa2[0] if x.isdigit()))
 
    dfa1_accept = re.findall('\d+',dfa1[1])
    dfa2_accept = re.findall('\d+',dfa2[1])
 
-   total_States = int(((2 * dfa1_Q)/2) * dfa2_Q)
+   total_States = daf1_Q * dfa2_Q
    theStates = []
    for i in range(dfa1_Q):
 	   for j in range(dfa2_Q):
