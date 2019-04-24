@@ -7,6 +7,7 @@ dfa1 = []
 dfa2 = []
 tempList1 = []
 tempList2 = []
+theStates = []
 
 def run_script():
     if(len(sys.argv) == 2):
@@ -61,11 +62,15 @@ def productConstruction():
     dfa2_accept = re.findall('\d+',dfa2[1])
 
     total_States = int(((2*dfa1_Q)/2) * dfa2_Q)
-    theStates = []
-    for i in range(dfa1_Q):
-        for j in range(dfa2_Q):
-            theStates.append(str(i) +','+ str(j)) ## EACH new state will be separated with comma, Ran into problem where we had 110 and 110 but different 1,10 and 11,0
-    #Doing below for accepting States
+
+    az = 0
+    for w in range(dfa1_Q):
+	   for s in range(dfa2_Q):
+		   theStates.append(str(w) +','+ str(s))
+		   s +=1
+	   w += 1
+	   az += 1
+
     accept_States = []
     for i in dfa1_accept:
         for j in dfa2_accept:
