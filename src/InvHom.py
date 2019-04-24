@@ -87,7 +87,6 @@ print()
 for x in homo_table:
 	for y in homo_table[x]:
 		print(homo_table[x][y], end= " ")
-print()
-      
+	print()
 
 findInverse()
