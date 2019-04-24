@@ -84,7 +84,6 @@ def productConstruction():
 	   while s in range(dfa2_Q):
 		   theStates.append(str(w) +','+ str(s))
 		   s += 1
-		   z += 1
 	   w += 1
 	   z += 1
    accept_States = []
