@@ -2,6 +2,7 @@ import sys
 import re
 from collections import OrderedDict
 
+DFAinfo = []
 
 def run_script():
     if(len(sys.argv) == 2):
@@ -9,6 +10,12 @@ def run_script():
     elif(len(sys.argv) == 3):
         productConstruction()
 
+
+def run_script():
+   if(len(sys.argv) == 2):
+      getComplement()
+   elif(len(sys.argv) == 3):
+      productConstruction()
 
 def getComplement():
    for line in open(sys.argv[1]):
