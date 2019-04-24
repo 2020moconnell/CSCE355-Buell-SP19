@@ -77,14 +77,10 @@ def productConstruction():
    #   for j in range(dfa2_Q):
    #      theStates.append(str(i) +','+ str(j))
    #accept_States = []
-   w = 0
-   s = 0
    az = 0
-   while w in range(dfa1_Q):
-	   while s in range(dfa2_Q):
+   for w in range(dfa1_Q):
+	   for s in range(dfa2_Q):
 		   theStates.append(str(w) +','+ str(s))
-		   s += 1
-	   w += 1
 	   az += 1
    accept_States = []
 
