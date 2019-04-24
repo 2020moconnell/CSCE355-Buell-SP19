@@ -63,10 +63,14 @@ def productConstruction():
     total_States = int(((2*dfa1_Q)/2) * dfa2_Q)
     theStates = []
 	#####################################################################
-    for i in range(dfa1_Q):
-        for j in range(dfa2_Q):
-            theStates.append(str(i) +','+ str(j)) 
 
+    aa=0
+    while aa == 0:
+		for i in range(dfa1_Q):
+			for j in range(dfa2_Q):
+				theStates.append(str(i) +','+ str(j)) 
+		aa += 1
+###################################################################
     accept_States = []
     for i in dfa1_accept:
         for j in dfa2_accept:
