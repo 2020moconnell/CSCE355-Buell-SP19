@@ -7,7 +7,7 @@ dfa1 = []
 dfa2 = []
 tempList1 = []
 tempList2 = []
-E = []
+#E = []
 TTable = []
 
 
@@ -80,8 +80,7 @@ def productConstruction():
         iOfAccept.append(theStates.index(i))
 
     Alpha = dfa1[2]
-    for x in dfa1[2][10:]:
-	   E.append(x)
+    E = [x for x in dfa1[2][10:]]
     ## DFA 1
     dfa_table = OrderedDict()
 
