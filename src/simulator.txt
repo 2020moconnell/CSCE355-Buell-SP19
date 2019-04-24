@@ -5,4 +5,4 @@
 
 Build:
 Run:
-  python3 dfa_simulator.py
+  python3 DFASimulator.py
