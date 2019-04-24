@@ -70,7 +70,7 @@ def productConstruction():
    dfa2_accept = re.findall('\d+',dfa2[1])
 
    #4/24
-   total_States = ((2 * dfa1_Q)/2) * dfa2_Q
+   total_States = int(((2 * dfa1_Q)/2) * dfa2_Q)
 
    #4/24
    #for i in range(dfa1_Q):
