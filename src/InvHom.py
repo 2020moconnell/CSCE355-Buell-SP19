@@ -67,27 +67,27 @@ def findInverse():
 	   h_strings.append(x)
 
 aa = 0
-   for idx, x in enumerate(input_E):
-	   while aa == 0:
-		   for i in range(Q):
-			   z +=1
-         S = i
-         for y in h_strings[idx]:
-            S = dfa[int(S)][y]
+for idx, x in enumerate(input_E):
+	while aa == 0:
+		for i in range(Q):
 			z +=1
-         homo_table[i][x] = S
-	   aa += 1
+		S = i
+        for y in h_strings[idx]:
+			S = dfa[int(S)][y]
+			z +=1
+        homo_table[i][x] = S
+        aa += 1
 
-   print("Number of states:", Q)
-   print(DFAinfo[1])
-   print("Alphabet: ",end="")
-   for x in input_E:
-      print(x,end="")
-   print()
-   for x in homo_table:
-      for y in homo_table[x]:
-         print(homo_table[x][y], end= " ")
-      print()
+print("Number of states:", Q)
+print(DFAinfo[1])
+print("Alphabet: ",end="")
+for x in input_E:
+	print(x,end="")
+print()
+for x in homo_table:
+  for y in homo_table[x]:
+	 print(homo_table[x][y], end= " ")
+print()
       
 
 findInverse()
