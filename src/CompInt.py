@@ -17,7 +17,6 @@ E = []
 TTable = []
 TTable2 = []
 theStates = []
-z = 0
 
 def run_script():
    if(len(sys.argv) == 2):
@@ -80,12 +79,13 @@ def productConstruction():
    #accept_States = []
    w = 0
    s = 0
+   az = 0
    while w in range(dfa1_Q):
 	   while s in range(dfa2_Q):
 		   theStates.append(str(w) +','+ str(s))
 		   s += 1
 	   w += 1
-	   z += 1
+	   az += 1
    accept_States = []
 
    #for i in dfa1_accept:
@@ -162,12 +162,10 @@ def productConstruction():
    print("Accepting states:", end= " ")
    for i in iOfAccept:
 	   print(i, end=" ")
-	   z += 1
    print()
    print(alpha)
    for i in dfa_table:
 	   for j in dfa2_table:
-		   z +=1
 		   for idx, x in enumerate(E):
 			   S = theStates.index(dfa_table[i][x] +','+ dfa2_table[j][x])
 			   if(idx < len(E)):
