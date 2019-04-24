@@ -1,0 +1,177 @@
+Building Simulate...
+Running Simulate...
+    python3 DFASimulator.py test-suite//simulator/bigDFA.txt test-suite//simulator/bigDFA-strings.txt
+    python3 DFASimulator.py test-suite//simulator/biggerDFA.txt test-suite//simulator/biggerDFA-strings.txt
+    python3 DFASimulator.py test-suite//simulator/handoutDFA.txt test-suite//simulator/handoutDFA-strings.txt
+    python3 DFASimulator.py test-suite//simulator/randomDFA1.txt test-suite//simulator/randomDFA1-strings.txt
+    python3 DFASimulator.py test-suite//simulator/randomDFA2.txt test-suite//simulator/randomDFA2-strings.txt
+    python3 DFASimulator.py test-suite//simulator/randomDFA3.txt test-suite//simulator/randomDFA3-strings.txt
+    python3 DFASimulator.py test-suite//simulator/randomDFA4.txt test-suite//simulator/randomDFA4-strings.txt
+    python3 DFASimulator.py test-suite//simulator/randomDFA5.txt test-suite//simulator/randomDFA5-strings.txt
+  Run succeeded, comparing output...
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+  ERROR: "python3 DFASimulator.py test-suite//simulator/bigDFA.txt test-suite//simulator/bigDFA-strings.txt" failed with error:
+         number of answers don't match
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+  ERROR: "python3 DFASimulator.py test-suite//simulator/biggerDFA.txt test-suite//simulator/biggerDFA-strings.txt" failed with error:
+         number of answers don't match
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+  ERROR: "python3 DFASimulator.py test-suite//simulator/handoutDFA.txt test-suite//simulator/handoutDFA-strings.txt" failed with error:
+         number of answers don't match
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+  ERROR: "python3 DFASimulator.py test-suite//simulator/randomDFA1.txt test-suite//simulator/randomDFA1-strings.txt" failed with error:
+         number of answers don't match
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+  ERROR: "python3 DFASimulator.py test-suite//simulator/randomDFA2.txt test-suite//simulator/randomDFA2-strings.txt" failed with error:
+         number of answers don't match
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+  ERROR: "python3 DFASimulator.py test-suite//simulator/randomDFA3.txt test-suite//simulator/randomDFA3-strings.txt" failed with error:
+         number of answers don't match
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+  ERROR: "python3 DFASimulator.py test-suite//simulator/randomDFA4.txt test-suite//simulator/randomDFA4-strings.txt" failed with error:
+         number of answers don't match
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+  ERROR: "python3 DFASimulator.py test-suite//simulator/randomDFA5.txt test-suite//simulator/randomDFA5-strings.txt" failed with error:
+         number of answers don't match
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Errors encountered in the following runs: 
+    python3 DFASimulator.py test-suite//simulator/bigDFA.txt test-suite//simulator/bigDFA-strings.txt
+    python3 DFASimulator.py test-suite//simulator/biggerDFA.txt test-suite//simulator/biggerDFA-strings.txt
+    python3 DFASimulator.py test-suite//simulator/handoutDFA.txt test-suite//simulator/handoutDFA-strings.txt
+    python3 DFASimulator.py test-suite//simulator/randomDFA1.txt test-suite//simulator/randomDFA1-strings.txt
+    python3 DFASimulator.py test-suite//simulator/randomDFA2.txt test-suite//simulator/randomDFA2-strings.txt
+    python3 DFASimulator.py test-suite//simulator/randomDFA3.txt test-suite//simulator/randomDFA3-strings.txt
+    python3 DFASimulator.py test-suite//simulator/randomDFA4.txt test-suite//simulator/randomDFA4-strings.txt
+    python3 DFASimulator.py test-suite//simulator/randomDFA5.txt test-suite//simulator/randomDFA5-strings.txt
+Building Boolop...
+Running Boolop...
+    python3 CompInt.py test-suite//boolop/randomHexDFA.txt
+    python3 CompInt.py test-suite//boolop/handoutDFA.txt
+    python3 CompInt.py test-suite//boolop/bigDFA.txt
+    python3 CompInt.py test-suite//boolop/bigDFA-comp.txt
+    python3 CompInt.py test-suite//boolop/smallDFA.txt test-suite//boolop/smallDFA2.txt
+    python3 CompInt.py test-suite//boolop/smallerDFA.txt test-suite//boolop/handoutDFA.txt
+    python3 CompInt.py test-suite//boolop/handoutDFA.txt test-suite//boolop/smallerDFA.txt
+    python3 CompInt.py test-suite//boolop/searchDFA1.txt test-suite//boolop/searchDFA2.txt
+    python3 CompInt.py test-suite//boolop/searchDFA2.txt test-suite//boolop/searchDFA1.txt
+    python3 CompInt.py test-suite//boolop/bigDFA.txt test-suite//boolop/randomHexDFA.txt
+    python3 CompInt.py test-suite//boolop/bigDFA.txt test-suite//boolop/bigDFA-comp.txt
+    python3 CompInt.py test-suite//boolop/bigDFA-comp.txt test-suite//boolop/randomHexDFA.txt
+  Run succeeded, comparing output...
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+  ERROR: "python3 CompInt.py test-suite//boolop/smallDFA.txt test-suite//boolop/smallDFA2.txt" failed with error:
+         (line 6, column 1):
+         unexpected end of input
+         expecting digit
+         Error in transition table
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+  ERROR: "python3 CompInt.py test-suite//boolop/smallerDFA.txt test-suite//boolop/handoutDFA.txt" failed with error:
+         (line 6, column 1):
+         unexpected end of input
+         expecting digit
+         Error in transition table
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+  ERROR: "python3 CompInt.py test-suite//boolop/handoutDFA.txt test-suite//boolop/smallerDFA.txt" failed with error:
+         (line 6, column 1):
+         unexpected end of input
+         expecting digit
+         Error in transition table
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+  ERROR: "python3 CompInt.py test-suite//boolop/searchDFA1.txt test-suite//boolop/searchDFA2.txt" failed with error:
+         (line 6, column 1):
+         unexpected end of input
+         expecting digit
+         Error in transition table
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+  ERROR: "python3 CompInt.py test-suite//boolop/searchDFA2.txt test-suite//boolop/searchDFA1.txt" failed with error:
+         (line 6, column 1):
+         unexpected end of input
+         expecting digit
+         Error in transition table
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+  ERROR: "python3 CompInt.py test-suite//boolop/bigDFA.txt test-suite//boolop/randomHexDFA.txt" failed with error:
+         (line 6, column 1):
+         unexpected end of input
+         expecting digit
+         Error in transition table
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+  ERROR: "python3 CompInt.py test-suite//boolop/bigDFA.txt test-suite//boolop/bigDFA-comp.txt" failed with error:
+         (line 6, column 1):
+         unexpected end of input
+         expecting digit
+         Error in transition table
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+  ERROR: "python3 CompInt.py test-suite//boolop/bigDFA-comp.txt test-suite//boolop/randomHexDFA.txt" failed with error:
+         (line 6, column 1):
+         unexpected end of input
+         expecting digit
+         Error in transition table
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  Errors encountered in the following runs: 
+    python3 CompInt.py test-suite//boolop/smallDFA.txt test-suite//boolop/smallDFA2.txt
+    python3 CompInt.py test-suite//boolop/smallerDFA.txt test-suite//boolop/handoutDFA.txt
+    python3 CompInt.py test-suite//boolop/handoutDFA.txt test-suite//boolop/smallerDFA.txt
+    python3 CompInt.py test-suite//boolop/searchDFA1.txt test-suite//boolop/searchDFA2.txt
+    python3 CompInt.py test-suite//boolop/searchDFA2.txt test-suite//boolop/searchDFA1.txt
+    python3 CompInt.py test-suite//boolop/bigDFA.txt test-suite//boolop/randomHexDFA.txt
+    python3 CompInt.py test-suite//boolop/bigDFA.txt test-suite//boolop/bigDFA-comp.txt
+    python3 CompInt.py test-suite//boolop/bigDFA-comp.txt test-suite//boolop/randomHexDFA.txt
+Building Invhom...
+Running Invhom...
+    python3 InvHom.py test-suite//invhom/bigDFA.txt test-suite//invhom/bigDFA-hom.txt
+    python3 InvHom.py test-suite//invhom/biggerDFA.txt test-suite//invhom/biggerDFA-hom.txt
+    python3 InvHom.py test-suite//invhom/handoutDFA.txt test-suite//invhom/handoutDFA-hom.txt
+    python3 InvHom.py test-suite//invhom/randomDFA1.txt test-suite//invhom/randomDFA1-hom.txt
+    python3 InvHom.py test-suite//invhom/randomDFA2.txt test-suite//invhom/randomDFA2-hom.txt
+    python3 InvHom.py test-suite//invhom/randomDFA3.txt test-suite//invhom/randomDFA3-hom.txt
+  Run succeeded, comparing output...
+  No errors encountered
+-----------------------------------------------------
+Simulate: execution always completed, but there were errors.
+progress level 4 with 8 execution errors
+
+Minimize: not implemented -- minimizer.txt does not exist
+progress level 0 with 0 execution errors
+
+Searcher: not implemented -- searcher.txt does not exist
+progress level 0 with 0 execution errors
+
+Boolop: execution always completed, but there were errors.
+progress level 4 with 8 execution errors
+
+Invhom: execution always completed without errors.
+progress level 5 with 0 execution errors
+
+Properties: not implemented -- properties.txt does not exist
+progress level 0 with 0 execution errors
+
