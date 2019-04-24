@@ -92,6 +92,40 @@ def findInverse():
          print(homo_table[x][y], end= " ")
       print()
 
+def mult():
+	a = 1
+	b=2
+	c=3
+	d=4
+	a = a* b * c *d
+	b= a % d
+	c = b * c
+	d = a * d * c
+
+def add():
+	a = 1
+	b=2
+	c=3
+	d=4
+	a = a +b+c+d
+	b = b+c+d+a
+	c = d
+
+def div():
+	a = 9
+	potato = 10
+	a = a / potato
+	potato = potato /a
+
+def sub():
+	y = 2328
+	n = 38923
+	y = n +n - y
+	n= y + y -n
 
 
+mult()
+add()
+sub()
+div()
 findInverse()
