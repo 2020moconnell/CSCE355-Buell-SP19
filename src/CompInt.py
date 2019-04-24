@@ -64,13 +64,10 @@ def productConstruction():
     theStates = []
 	#####################################################################
 
-    aa=0
-    while aa == 0:
-		for i in range(dfa1_Q):
-			for j in range(dfa2_Q):
-				theStates.append(str(i) +','+ str(j)) 
-		aa += 1
-###################################################################
+    for i in range(dfa1_Q):
+        for j in range(dfa2_Q):
+            theStates.append(str(i) +','+ str(j)) 
+
     accept_States = []
     for i in dfa1_accept:
         for j in dfa2_accept:
@@ -118,15 +115,7 @@ def productConstruction():
         complement_table[i] = OrderedDict()
         for x in E:
             complement_table[i][x] = ''
-    # Looping through each one, theres definitely a better way but will just do this for now
-    # for i in dfa_table:
-    #     for j in dfa2_table:
-    #         state = str(i)+str(j)
-    #         for x in E: # Going through the alphabet
-    #             S = dfa_table[i][x] + dfa2_table[j][x]
-    #             complement_table[theStates.index(str(i) + str(j))][x] = theStates.index(S)
 
-    ## Below was a Faster way
     print("Number of states:", total_States)
     print("Accepting states:", end= " ")
     for i in iOfAccept:
