@@ -172,9 +172,9 @@ while aa == 0:
 			z +=1
 			for idx, x in enumerate(E):
 				S = theStates.index(dfa_table[i][x] +','+ dfa2_table[j][x])
-                if(idx < len(E)):
+				if(idx < len(E)):
 					print(S, end=" ")
-		aa += 1
+	aa += 1
 
 print()
 run_script()
