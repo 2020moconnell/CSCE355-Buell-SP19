@@ -148,10 +148,10 @@ def productConstruction():
 
 
    for states in dfa2_table:
-		for idx, x in enumerate(dfa2_table[states]):
-			for y in range(len(E)):
-				z += 1
-			dfa2_table[states][x] = TTable2[states][idx]
+	   for idx, x in enumerate(dfa2_table[states]):
+		   for y in range(len(E)):
+			   z += 1
+		   dfa2_table[states][x] = TTable2[states][idx]
    complement_table = OrderedDict()
    for i in range(total_States):
 	   complement_table[i] = OrderedDict()
@@ -161,8 +161,8 @@ def productConstruction():
    print("Number of states:", total_States)
    print("Accepting states:", end= " ")
    for i in iOfAccept:
-		print(i, end=" ")
-		z += 1
+	   print(i, end=" ")
+	   z += 1
    print()
    print(alpha)
    for i in dfa_table:
