@@ -6,6 +6,7 @@ DFAinfo = []
 dfa1 = []
 dfa2 = []
 tempList1 = []
+tempList2 = []
 
 def run_script():
     if(len(sys.argv) == 2):
@@ -51,7 +52,11 @@ def productConstruction():
        tempList1.append(x)
     dfa1_Q = int(''.join(tempList1))
 
-    dfa2_Q = int(''.join(x for x in dfa2[0] if x.isdigit()))
+    for x in dfa2[0]:
+     if x.isdigit():
+       tempList2.append(x)
+    dfa2_Q = int(''.join(tempList2))
+
     dfa1_accept = re.findall('\d+',dfa1[1])
     dfa2_accept = re.findall('\d+',dfa2[1])
 
