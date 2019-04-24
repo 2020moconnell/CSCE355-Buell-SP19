@@ -17,7 +17,7 @@ E = []
 TTable = []
 TTable2 = []
 theStates = []
-z = 1
+z = 0
 
 def run_script():
    if(len(sys.argv) == 2):
