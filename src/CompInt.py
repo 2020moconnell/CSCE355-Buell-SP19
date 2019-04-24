@@ -72,7 +72,7 @@ def productConstruction():
     for i in dfa1_accept:
         for j in dfa2_accept:
             accept_States.append(i +','+ j)
-    iOfAccept = [] 
+    iOfAccept = [] # This is index of the accepting States.. Using this for output
     for i in accept_States:
         iOfAccept.append(theStates.index(i))
 
@@ -129,7 +129,7 @@ def productConstruction():
     for i in iOfAccept:
         print(i, end=" ")
     print()
-    print(Alphabet)
+    print(Alpha)
     for i in dfa_table: ## Thought printing out each one as many times as alphabet length would be faster
         for j in dfa2_table:
             for idx, x in enumerate(E):
