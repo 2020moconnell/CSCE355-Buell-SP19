@@ -62,12 +62,11 @@ def productConstruction():
 
     total_States = int(((2*dfa1_Q)/2) * dfa2_Q)
     theStates = []
-
+	#####################################################################
     for i in range(dfa1_Q):
-		for j in range(dfa2_Q):
-			theStates.append(str(i) +','+ str(j)) 
+        for j in range(dfa2_Q):
+            theStates.append(str(i) +','+ str(j)) 
 
-#####################################################################
     accept_States = []
     for i in dfa1_accept:
         for j in dfa2_accept:
@@ -76,7 +75,7 @@ def productConstruction():
     for i in accept_States:
         iOfAccept.append(theStates.index(i))
 
-    Alpha = dfa1[2]
+    Alphabet = dfa1[2] #Using this for Alphabet
     E = [x for x in dfa1[2][10:]]
     ## DFA 1
     dfa_table = OrderedDict()
@@ -129,7 +128,7 @@ def productConstruction():
     for i in iOfAccept:
         print(i, end=" ")
     print()
-    print(Alpha)
+    print(Alphabet)
     for i in dfa_table: ## Thought printing out each one as many times as alphabet length would be faster
         for j in dfa2_table:
             for idx, x in enumerate(E):
