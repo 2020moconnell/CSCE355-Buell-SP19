@@ -9,22 +9,30 @@ def run_script():
     elif(len(sys.argv) == 3):
         productConstruction()
 
-## To Get Complement of DFA, you just swap accepting states with NON Accepting States
-## So now non-accepting states are now accepting and accepting states are non-accepting
+
 def getComplement():
-    dfa_description = [line.rstrip('\n') for line in open(sys.argv[1])]
-    states = re.findall('\d+',dfa_description[0])
-    counter = int(states[0])
-    accepting_states = re.findall('\d+',dfa_description[1])
-    for i in range(len(dfa_description)):
-        if(i == 1):
-            print(dfa_description[i][0:18],end = '')
-            for i in range(counter):
-                if(not str(i) in accepting_states):
-                    print(i, "", end ='')
-            print()
-        else:
-            print(dfa_description[i])
+   for line in open(sys.argv[1]):
+      DFAinfo.append(line.replace('\n',''))
+   states = re.findall('\d+',DFAinfo[0])
+   counter = int(states[0])
+   accepting_states = re.findall('\d+',DFAinfo[1])
+   
+   a = 0
+   b = len(DFAinfo)
+   d = 0
+   c = counter
+   while a < b:
+	   if(a == 1):
+		   print(DFAinfo[a][0:18], end = '')
+		   while d < c:
+			   if(not str(d) in accepting_states):
+				   print(d, "", end = '')
+			   d += 1
+		   print()
+		   a += 1
+	   else:
+		   print(DFAinfo[a])
+		   a += 1
 
 ## This is finding the intersection between the two
 ## We will assume that it follows the format 0 = 00, 1 = 01 as in the first state of DFA A x(Cross Product) of DFA B will give us State 0. And it will continue...

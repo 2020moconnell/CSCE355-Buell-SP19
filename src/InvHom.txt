@@ -1,8 +1,4 @@
-# Maggie O'Connell
-# CSCE 355 Buell
-# 4/24/19
-# 1: DFA Simulator
-
 Build:
+
 Run:
   python3 InvHom.py
