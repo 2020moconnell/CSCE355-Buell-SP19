@@ -7,9 +7,6 @@ dfa1 = []
 dfa2 = []
 tempList1 = []
 tempList2 = []
-#E = []
-TTable = []
-
 
 def run_script():
     if(len(sys.argv) == 2):
@@ -75,7 +72,7 @@ def productConstruction():
     for i in dfa1_accept:
         for j in dfa2_accept:
             accept_States.append(i +','+ j)
-    iOfAccept = []
+    iOfAccept = [] 
     for i in accept_States:
         iOfAccept.append(theStates.index(i))
 
@@ -89,15 +86,13 @@ def productConstruction():
         for x in E:
             dfa_table[i][x] = ''
 	# Messing and converting for ease of access/traverse
-    #TTable = [x for x in dfa1[3:]]
-	for x in dfa1[3:]:
-		TTable.append(x)
-    for i in range(len(TTable)):
-        TTable[i] = re.findall('\d+', TTable[i])
+    transition_table = [x for x in dfa1[3:]]
+    for i in range(len(transition_table)):
+        transition_table[i] = re.findall('\d+', transition_table[i])
     for states in dfa_table:
         for idx, x in enumerate(dfa_table[states]):
             for y in range(len(E)):
-                dfa_table[states][x] = TTable[states][idx]
+                dfa_table[states][x] = transition_table[states][idx]
 
     # DFA 2
     dfa2_table = OrderedDict()
@@ -120,13 +115,21 @@ def productConstruction():
         complement_table[i] = OrderedDict()
         for x in E:
             complement_table[i][x] = ''
+    # Looping through each one, theres definitely a better way but will just do this for now
+    # for i in dfa_table:
+    #     for j in dfa2_table:
+    #         state = str(i)+str(j)
+    #         for x in E: # Going through the alphabet
+    #             S = dfa_table[i][x] + dfa2_table[j][x]
+    #             complement_table[theStates.index(str(i) + str(j))][x] = theStates.index(S)
 
+    ## Below was a Faster way
     print("Number of states:", total_States)
     print("Accepting states:", end= " ")
     for i in iOfAccept:
         print(i, end=" ")
     print()
-    print(Alpha)
+    print(Alphabet)
     for i in dfa_table: ## Thought printing out each one as many times as alphabet length would be faster
         for j in dfa2_table:
             for idx, x in enumerate(E):
