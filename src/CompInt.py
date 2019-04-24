@@ -7,7 +7,6 @@ dfa1 = []
 dfa2 = []
 tempList1 = []
 tempList2 = []
-theStates = []
 
 def run_script():
     if(len(sys.argv) == 2):
@@ -62,14 +61,16 @@ def productConstruction():
     dfa2_accept = re.findall('\d+',dfa2[1])
 
     total_States = int(((2*dfa1_Q)/2) * dfa2_Q)
+    theStates = []
 
     az = 0
-    for w in range(dfa1_Q):
-	   for s in range(dfa2_Q):
-		   theStates.append(str(w) +','+ str(s))
-		   s +=1
-	   w += 1
-	   az += 1
+    for i in range(dfa1_Q):
+		az += 1
+		for j in range(dfa2_Q):
+			theStates.append(str(i) +','+ str(j))
+			az += 1
+			for k in range(dfa1_Q):
+				az += 1
 
     accept_States = []
     for i in dfa1_accept:
