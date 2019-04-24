@@ -3,6 +3,8 @@ import re
 from collections import OrderedDict
 
 DFAinfo = []
+dfa1 = []
+dfa2 = []
 
 def run_script():
     if(len(sys.argv) == 2):
@@ -42,16 +44,8 @@ def productConstruction():
       dfa1.append(line.replace('\n',''))
     for line in open(sys.argv[2]):
       dfa2.append(line.replace('\n',''))
-    for x in dfa1[0]:
-     if x.isdigit():
-       tempList1.append(x)
-    dfa1_Q = int(''.join(tempList1))
-    for x in dfa2[0]:
-     if x.isdigit():
-       tempList2.append(x)
-    tempInt = ''.join(tempList2)
-    dfa2_Q = int(tempInt)
-
+    dfa1_Q = int(''.join(x for x in dfa1[0] if x.isdigit()))
+    dfa2_Q = int(''.join(x for x in dfa2[0] if x.isdigit()))
     dfa1_accept = re.findall('\d+',dfa1[1])
     dfa2_accept = re.findall('\d+',dfa2[1])
 
