@@ -146,11 +146,11 @@ def productConstruction():
 	   TTable2[h] = re.findall('\d+', TTable2[h])
 	   h += 1
 
-
+   zzz = 0
    for states in dfa2_table:
 	   for idx, x in enumerate(dfa2_table[states]):
 		   for y in range(len(E)):
-			   z += 1
+			   zzz += 1
 		   dfa2_table[states][x] = TTable2[states][idx]
    complement_table = OrderedDict()
    for i in range(total_States):
