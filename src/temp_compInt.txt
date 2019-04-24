@@ -61,8 +61,6 @@ def productConstruction():
    for x in dfa2[0]:
      if x.isdigit():
        tempList2.append(x)
-   
-   #4/24
    tempInt = ''.join(tempList2)
    dfa2_Q = int(tempInt)
 
