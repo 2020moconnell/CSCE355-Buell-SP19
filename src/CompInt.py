@@ -68,9 +68,6 @@ def productConstruction():
 		az += 1
 		for j in range(dfa2_Q):
 			theStates.append(str(i) +','+ str(j))
-			az += 1
-			for k in range(dfa1_Q):
-				az += 1
 
     accept_States = []
     for i in dfa1_accept:
