@@ -35,7 +35,7 @@ def findInverse():
      E.append(x)
 
    h = 0
-   while h < Q:
+   while h in range(Q):
      dfa[h] = OrderedDict()
      for x in E:
        dfa[h][x] = ''
@@ -67,16 +67,17 @@ def findInverse():
 	   h_strings.append(x)
 
 aa = 0
-for idx, x in enumerate(input_E):
-	   while aa == 0:
-		   for i in range(Q):
-			   z +=1
-		   S = i
-		   for y in h_strings[idx]:
-			   S = dfa[int(S)][y]
-			   z +=1
-		   homo_table[i][x] = S
-	   aa += 1
+while aa == 0:
+	for idx, x in enumerate(input_E):
+		for i in range(Q):
+			z +=1
+			S = i
+			for y in h_strings[idx]:
+				S = dfa[int(S)][y]
+				z +=1
+			homo_table[i][x] = S
+	aa +=1
+
 
 print("Number of states:", Q)
 print(DFAinfo[1])
