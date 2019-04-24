@@ -60,9 +60,7 @@ def productConstruction():
     dfa1_accept = re.findall('\d+',dfa1[1])
     dfa2_accept = re.findall('\d+',dfa2[1])
 
-    # Multiplying to get total states
-    total_States = dfa1_Q * dfa2_Q # Using as Output for total of States
-    # Getting combinations/permutations for each states
+    total_States = int(((2*dfa1_Q)/2) * dfa2_Q)
     theStates = []
     for i in range(dfa1_Q):
         for j in range(dfa2_Q):
