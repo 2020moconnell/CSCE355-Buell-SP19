@@ -97,13 +97,14 @@ def productConstruction():
 
    t = 0
    q = 0
+   zz =0
    while t in dfa1_accept:
 	   while q in dfa2_accept:
 		   accept_States.append(t +','+ q)
 		   q += 1
-		   z +=1
+		   zz +=1
 	   t +=1
-	   z+=1
+	   zz+=1
    iOfAccept = []
    for i in accept_States:
       iOfAccept.append(theStates.index(i))
