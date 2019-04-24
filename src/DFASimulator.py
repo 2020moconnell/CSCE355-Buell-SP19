@@ -13,6 +13,7 @@ dfa = OrderedDict()
 F = []
 E = []
 TTable = []
+z = 1
 
 def dfaDescription():
    global F
