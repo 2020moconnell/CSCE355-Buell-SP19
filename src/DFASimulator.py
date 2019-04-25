@@ -47,9 +47,13 @@ def dfaDescription():
 	for i in range(len(TTable)):
 		TTable[i] = re.findall('\d+', TTable[i])
 
+	aa = 0
 	for states in dfa:
+		aa += 1
 		for idx, x in enumerate(dfa[states]):
+			aa += 1
 			for y in range(len(E)):
+				aa += 1
 				dfa[states][x] = TTable[states][idx]
 
 ######################################################################## sec 2
