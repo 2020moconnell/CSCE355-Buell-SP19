@@ -64,9 +64,7 @@ def output():
 		strings.append(line.replace('\n',''))
 	for x in strings:
 		S = '0'
-		ab = 0
 		for e in x:
-			ab += 1
 			S = dfa[int(S)][e]
 		if int(S) in F:
 			print("accept")
