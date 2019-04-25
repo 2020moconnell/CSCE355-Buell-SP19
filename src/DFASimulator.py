@@ -63,20 +63,14 @@ def dfaDescription():
 def output():
 	for line in open(sys.argv[2]):
 		strings.append(line.replace('\n',''))
-	try:
-		# Looping through the dfa with given string starting at '0' as start
-		for x in strings:
-			S = '0'
-			for e in x:
-				# print("Current State: ", S, "char: ", e, end='')
-				S = dfa[int(S)][e]
-				# print(" New State: ", S)
-			if int(S) in F:
-				print("accept")
-			else:
-				print("reject")
-	except Exception as error:
-		print("Please check the input string again to make sure it matches! Error thrown at char: ", error)
+	for x in strings:
+		S = '0'
+		for e in x:
+			S = dfa[int(S)][e]
+		if int(S) in F:
+			print("accept")
+		else:
+			print("reject")
 
 dfaDescription()
 output()
