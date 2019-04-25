@@ -1,9 +1,0 @@
-accept
-reject
-accept
-reject
-accept
-accept
-accept
-accept
-accept
