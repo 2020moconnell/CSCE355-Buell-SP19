@@ -30,13 +30,17 @@ def dfaDescription():
 
 	for x in DFAinfo[2][10:]:
 		E.append(x)
-#########################################################################
+######################################################################### sec 1
 
-	#Putting in dict
-	for i in range(Q):
-		dfa[i] = OrderedDict()
+	h = 0
+	while h < Q:
+		dfa[h] = OrderedDict()
 		for x in E:
-			dfa[i][x] = ''
+			dfa[h][x] = ''
+		h += 1
+
+
+
 	# Messing and converting for ease of access/traverse
 	transition_table = [x for x in DFAinfo[3:]]
 	for i in range(len(transition_table)):
