@@ -52,7 +52,7 @@ def dfaDescription():
             dfa[states][x] = TTable[states][idx]
 #################################################################################### sec 2
 def output():
-   strings = [line.rstrip('\n') for line in open(sys.argv[2])]
+ 
    for line in open(sys.argv[2]):
      strings.append(line.replace('\n',''))
    for x in strings:

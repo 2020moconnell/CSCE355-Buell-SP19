@@ -59,27 +59,19 @@ def dfaDescription():
 ######################################################################## sec 2
 
 
-# Function to check if string is accepted or not
 def output():
-	try:
-		strings = [line.rstrip('\n') for line in open(sys.argv[2])]
-	except Exception as error:
-		print("You did not provide a second file as argument!", error)
-	## Looping through all input strings and checking against the dictionary
-	try:
-		# Looping through the dfa with given string starting at '0' as start
-		for x in strings:
-			S = '0'
-			for e in x:
-				# print("Current State: ", S, "char: ", e, end='')
-				S = dfa[int(S)][e]
-				# print(" New State: ", S)
-			if int(S) in F:
-				print("accept")
-			else:
-				print("reject")
-	except Exception as error:
-		print("Please check the input string again to make sure it matches! Error thrown at char: ", error)
+	for line in open(sys.argv[2]):
+		strings.append(line.replace('\n',''))
+	for x in strings:
+		S = '0'
+		ab = 0
+		for e in x:
+			ab += 1
+			S = dfa[int(S)][e]
+		if int(S) in F:
+			print("accept")
+	else:
+		print("reject")
 
 dfaDescription()
 output()
