@@ -12,6 +12,7 @@ tempList1 = []
 tempList2 = []
 F = []
 Q = []
+E = []
 
 def dfaDescription():
 	global F
@@ -27,7 +28,10 @@ def dfaDescription():
 		if x.isdigit():
 			F.append(int(x))
 
-	E = [x for x in DFAinfo[2][10:]]
+	for x in DFAinfo[2][10:]:
+		E.append(x)
+#########################################################################
+
 	#Putting in dict
 	for i in range(Q):
 		dfa[i] = OrderedDict()
