@@ -60,7 +60,8 @@ def dfaDescription():
 
 
 def output():
-	strings = [line.rstrip('\n') for line in open(sys.argv[2])]
+	for line in open(sys.argv[2]):
+		strings.append(line.replace('\n',''))
 	try:
 		# Looping through the dfa with given string starting at '0' as start
 		for x in strings:
