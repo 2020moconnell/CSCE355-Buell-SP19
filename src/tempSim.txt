@@ -24,7 +24,7 @@ def dfaDescription():
      if x.isdigit():
        tempList1.append(x)
    Q = int(''.join(tempList1))
-
+-------------------------------------------------
    for x in DFAinfo[1].split():
      if x.isdigit():
        F.append(int(x))

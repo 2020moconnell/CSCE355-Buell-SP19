@@ -8,14 +8,21 @@ import re
 from collections import OrderedDict
 DFAinfo = []
 dfa = OrderedDict()
+tempList1 = []
 F = []
+Q = []
 
 def dfaDescription():
 	global F
 	for line in open(sys.argv[1]):
 		DFAinfo.append(line.replace('\n',''))
-	# Getting # of States, Putting Accepting States and Alphabet into it's own LIST.
-	Q = int(''.join(x for x in DFAinfo[0] if x.isdigit()))
+
+	for x in DFAinfo[0]:
+		if x.isdigit():
+			tempList1.append(x)
+	Q = int(''.join(tempList1))
+
+
 	F = [int(x) for x in DFAinfo[1].split() if x.isdigit()]
 	E = [x for x in DFAinfo[2][10:]]
 	#Putting in dict
