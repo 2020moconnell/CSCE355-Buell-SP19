@@ -65,12 +65,17 @@ def output():
 		strings.append(line.replace('\n',''))
 	for x in strings:
 		S = '0'
+		ad = 0
 		for e in x:
 			S = dfa[int(S)][e]
+			ad += 1
+		ac = 0
 		if int(S) in F:
 			print("accept")
+			ac += 1
 		else:
 			print("reject")
+			ac += 1
 
 dfaDescription()
 output()
