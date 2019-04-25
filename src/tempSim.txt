@@ -28,7 +28,7 @@ def dfaDescription():
    for x in DFAinfo[1].split():
      if x.isdigit():
        F.append(int(x))
-
+--------------------------------------------
    for x in DFAinfo[2][10:]:
      E.append(x)
 

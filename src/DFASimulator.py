@@ -9,6 +9,7 @@ from collections import OrderedDict
 DFAinfo = []
 dfa = OrderedDict()
 tempList1 = []
+tempList2 = []
 F = []
 Q = []
 
@@ -22,8 +23,10 @@ def dfaDescription():
 			tempList1.append(x)
 	Q = int(''.join(tempList1))
 
+	for x in DFAinfo[1].split():
+		if x.isdigit():
+			F.append(int(x))
 
-	F = [int(x) for x in DFAinfo[1].split() if x.isdigit()]
 	E = [x for x in DFAinfo[2][10:]]
 	#Putting in dict
 	for i in range(Q):
