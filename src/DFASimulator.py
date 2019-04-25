@@ -10,6 +10,7 @@ DFAinfo = []
 dfa = OrderedDict()
 tempList1 = []
 tempList2 = []
+TTable = []
 F = []
 Q = []
 E = []
@@ -39,17 +40,18 @@ def dfaDescription():
 			dfa[h][x] = ''
 		h += 1
 
-
-
 	# Messing and converting for ease of access/traverse
-	transition_table = [x for x in DFAinfo[3:]]
-	for i in range(len(transition_table)):
-		transition_table[i] = re.findall('\d+', transition_table[i])
+	for x in DFAinfo[3:]:
+		TTable.append(x)
+
+
+	for i in range(len(TTable)):
+		TTable[i] = re.findall('\d+', TTable[i])
 	#Matching inputed transition to dict
 	for states in dfa:
 		for idx, x in enumerate(dfa[states]):
 			for y in range(len(E)):
-					dfa[states][x] = transition_table[states][idx]
+					dfa[states][x] = TTable[states][idx]
 # Function to check if string is accepted or not
 def output():
 	try:

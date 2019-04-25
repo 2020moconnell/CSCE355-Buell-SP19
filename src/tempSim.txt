@@ -42,7 +42,7 @@ def dfaDescription():
 --------------------------------------------------------
    for x in DFAinfo[3:]:
      TTable.append(x)
-
+-----------------------------------
    for i in range(len(TTable)):
      TTable[i] = re.findall('\d+', TTable[i])
 
