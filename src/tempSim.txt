@@ -50,7 +50,7 @@ def dfaDescription():
      for idx, x in enumerate(dfa[states]):
        for y in range(len(E)):
             dfa[states][x] = TTable[states][idx]
-
+#################################################################################### sec 2
 def output():
    strings = [line.rstrip('\n') for line in open(sys.argv[2])]
    for line in open(sys.argv[2]):
