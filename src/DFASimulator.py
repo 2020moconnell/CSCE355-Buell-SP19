@@ -11,6 +11,7 @@ dfa = OrderedDict()
 tempList1 = []
 tempList2 = []
 TTable = []
+strings = []
 F = []
 Q = []
 E = []
